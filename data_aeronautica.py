@@ -109,7 +109,8 @@ class data_aeronautica:
         ax.set_xlabel("Tipo de Ocorrencia")
         ax.set_ylabel("Número de ocorrências")
         ax.set_title("Tipos de Ocorrências Aeronáuticas")
-        
+        plt.show()
+
         return list_ocorrencia, cont_ocorrencia
         
     def info_ocorr_freq(self,years=None,uf=None,plot_graph=True):
@@ -211,7 +212,7 @@ class data_aeronautica:
                     ax.set_title('Ocorrências aeronáuticas no Brasil baseado nos anos ' + str(years))
                 else:
                     ax.set_title('Ocorrências aeronáuticas em '+ uf + ' baseado nos anos ' + str(years))
-            
+            plt.show()
         return cont_ocorr_mes,cont_ocorr_hour
     
     def info_tipo_ocorr_freq(self,years=None,uf=None,plot_graph=True,ind_consider=10):
@@ -373,6 +374,8 @@ class data_aeronautica:
                 ax2.set_title('Classificação dos '+ str(ind_consider) +' maiores tipos de ocorrência ')
             else:
                 ax2.set_title('Classificação dos '+ str(ind_consider) +' maiores tipos de ocorrência ('+uf+')')
+            
+            plt.show()
         return [ocorrencia_classificacao_decrescente, list_tipo_ocorrencia_decrescente , contador_tipo_ocorrencia_decrescente]
 
 if __name__ == "__main__":
