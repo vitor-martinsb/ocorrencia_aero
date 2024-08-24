@@ -34,28 +34,28 @@ class data_aeronautica:
         if read_online_data:
             # Realiza a leitura considerando a URL dos dados
             url_ocorrencia = 'http://sistema.cenipa.aer.mil.br/cenipa/media/opendata/ocorrencia.csv'
-            self.data_ocorrencia = pd.read_csv(url_ocorrencia,error_bad_lines=False,warn_bad_lines=True,sep = ';')
+            self.data_ocorrencia = pd.read_csv(url_ocorrencia,on_bad_lines='skip',sep = ';')
             url_tipo_ocorrencia = 'http://sistema.cenipa.aer.mil.br/cenipa/media/opendata/ocorrencia_tipo.csv'
-            self.localdata_tipo_ocorrencia = pd.read_csv(url_tipo_ocorrencia,error_bad_lines=False,warn_bad_lines=True,sep = ';')
+            self.localdata_tipo_ocorrencia = pd.read_csv(url_tipo_ocorrencia,on_bad_lines='skip',sep = ';')
             url_tab_aero = 'http://sistema.cenipa.aer.mil.br/cenipa/media/opendata/aeronave.csv'
-            self.data_tab_aero = pd.read_csv(url_tab_aero,error_bad_lines=False,warn_bad_lines=True,sep = ';')
+            self.data_tab_aero = pd.read_csv(url_tab_aero,on_bad_lines='skip',sep = ';')
             url_fator = 'http://sistema.cenipa.aer.mil.br/cenipa/media/opendata/fator_contribuinte.csv'
-            self.data_tab_fator = pd.read_csv(url_fator,error_bad_lines=False,warn_bad_lines=True,sep = ';')
+            self.data_tab_fator = pd.read_csv(url_fator,on_bad_lines='skip',sep = ';')
             url_rec_seg = 'http://sistema.cenipa.aer.mil.br/cenipa/media/opendata/recomendacao.csv'
-            self.data_tab_fator = pd.read_csv(url_rec_seg,error_bad_lines=False,warn_bad_lines=True,sep = ';')
+            self.data_tab_fator = pd.read_csv(url_rec_seg,on_bad_lines='skip',sep = ';')
             
         else:
             # Realiza a leitura considerando a baseado nos dados que foram passados no folder
             fold_ocorrencia = fold+'ocorrencia.csv'
-            self.data_ocorrencia = pd.read_csv(fold_ocorrencia,error_bad_lines=False,warn_bad_lines=True,sep = ';')
+            self.data_ocorrencia = pd.read_csv(fold_ocorrencia,on_bad_lines='skip',sep = ';')
             fold_tipo_ocorrencia = fold+'ocorrencia_tipo.csv'
-            self.data_tipo_ocorrencia = pd.read_csv(fold_tipo_ocorrencia,error_bad_lines=False,warn_bad_lines=True,sep = ';')
+            self.data_tipo_ocorrencia = pd.read_csv(fold_tipo_ocorrencia,on_bad_lines='skip',sep = ';')
             fold_tab_aero = fold+'aeronave.csv'
-            self.data_tab_aero = pd.read_csv(fold_tab_aero,error_bad_lines=False,warn_bad_lines=True,sep = ';')
+            self.data_tab_aero = pd.read_csv(fold_tab_aero,on_bad_lines='skip',sep = ';')
             fold_tab_fator = fold+'fator_contribuinte.csv'
-            self.data_tab_fator = pd.read_csv(fold_tab_fator,error_bad_lines=False,warn_bad_lines=True,sep = ';')
+            self.data_tab_fator = pd.read_csv(fold_tab_fator,on_bad_lines='skip',sep = ';')
             fold_tab_rec_seg = fold+'recomendacao.csv'
-            self.data_tab_fator = pd.read_csv(fold_tab_rec_seg,error_bad_lines=False,warn_bad_lines=True,sep = ';')
+            self.data_tab_fator = pd.read_csv(fold_tab_rec_seg,on_bad_lines='skip',sep = ';')
     
     def plot_info_ocorr(self):
         """
@@ -395,6 +395,5 @@ if __name__ == "__main__":
     
     data_aero.info_ocorr_freq()
     aux = data_aero.info_ocorr_freq(years=[2021],uf='SC')
-    
-        
+
         

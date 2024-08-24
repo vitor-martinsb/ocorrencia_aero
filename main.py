@@ -16,10 +16,10 @@ if __name__ == "__main__":
     
     try:
         #tenta pegar o dado mais atual disponivel
-        data_aero = data_aeronautica(fold='./data/',read_online_data=False)
+        data_aero = data_aeronautica()
     except:
         #realiza a leitura local
-        data_aero = data_aeronautica(read_online_data=True)
+        data_aero = data_aeronautica(read_online_data=False)
     
     #Gera dados BR
     data_aero.plot_info_ocorr()
